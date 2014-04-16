@@ -1,0 +1,8 @@
+services:
+    kucera.tracy.exceptionLogger:
+        class: Kucera\TracyBundle\ExceptionLogger
+        arguments:
+            - %tracy.emails%
+            - %tracy.log_directory%
+        tags:
+            - {name: kernel.event_listener, event: kernel.exception, method: onKernelException}

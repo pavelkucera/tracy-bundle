@@ -1,0 +1,33 @@
+{
+    "name": "kucera/tracy-bundle",
+    "type": "library",
+    "keywords": [
+        "Tracy",
+        "Symfony",
+        "Exception"
+    ],
+    "license": ["BSD-3-Clause"],
+    "authors": [
+        {
+            "name": "Pavel Kučera",
+            "homepage": "http://github.com/pavelkucera"
+        },
+        {
+            "name": "Shipito",
+            "homepage": "http://shipito.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/pavelkucera/tracy-bundle/issues",
+        "source": "https://github.com/pavelkucera/tracy-bundle"
+    },
+    "require": {
+        "php": ">=5.4",
+        "tracy/tracy": "0.9.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kucera\\TracyBundle\\": "TracyBundle"
+        }
+    }
+}
