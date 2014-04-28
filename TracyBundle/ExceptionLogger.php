@@ -38,8 +38,14 @@ class ExceptionLogger
             return;
         }
 
+        $this->log($exception, Debugger::CRITICAL);
+    }
+
+
+    public function log(\Exception $e, $level = Debugger::ERROR)
+    {
         Debugger::$email = $this->emails;
         Debugger::$logDirectory = $this->logDir;
-        Debugger::log($exception, Debugger::CRITICAL);
+        Debugger::log($e, $level);
     }
 }
