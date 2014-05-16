@@ -22,6 +22,9 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('kucera_tracy');
 
         $rootNode->children()
+            ->booleanNode('log_automatically')
+                ->defaultTrue()
+            ->end()
             ->scalarNode('log_directory')
                 ->defaultNull()
             ->end()

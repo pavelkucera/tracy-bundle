@@ -31,6 +31,7 @@ class TracyExtension extends Extension
 
         $container->setParameter('tracy.log_directory', $dir);
         $container->setParameter('tracy.emails', $config['emails']);
+        $container->setParameter('tracy.log_automatically', $config['log_automatically']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');

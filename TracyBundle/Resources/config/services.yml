@@ -4,5 +4,6 @@ services:
         arguments:
             - %tracy.emails%
             - %tracy.log_directory%
+            - %tracy.log_automatically%
         tags:
             - {name: kernel.event_listener, event: kernel.exception, method: onKernelException}

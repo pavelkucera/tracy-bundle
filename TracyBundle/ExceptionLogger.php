@@ -23,18 +23,22 @@ class ExceptionLogger
     /** @var string */
     private $logDir;
 
+    /** @var bool */
+    private $logAutomatically;
 
-    public function __construct(array $emails, $logDir)
+
+    public function __construct(array $emails, $logDir, $logAutomatically)
     {
         $this->emails = $emails;
         $this->logDir = $logDir;
+        $this->logAutomatically = $logAutomatically;
     }
 
 
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
         $exception = $event->getException();
-        if ($exception instanceof HttpException) {
+        if (!$this->logAutomatically || $exception instanceof HttpException) {
             return;
         }
 
